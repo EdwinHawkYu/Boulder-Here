@@ -7,6 +7,7 @@ router.get('/', function(req, res, next) {
   res.redirect('home')
 });
 
-router.get('/climbs', climbsCtrl.index)
+router.get('/climbs', climbsCtrl.index);
+router.get('/new', climbsCtrl.new);
 
 module.exports = router;

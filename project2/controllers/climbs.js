@@ -1,9 +1,14 @@
-const Climb = require('../models/climb')
+const Climb = require('../models/climb');
 
 module.exports={
-    index
+    index,
+    new: newClimb
 }
 
 function index(req, res){
-    res.render('climbs/index')
+    res.render('climbs/index');
+}
+
+function newClimb(req, res){
+    res.render('climbs/new');
 }

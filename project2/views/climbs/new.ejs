@@ -1,0 +1,14 @@
+<%- include('../partials/header') %> 
+    <h1>Add New Climbing Post</h1>
+    <form id="new-form" action="/climbs" method="POST">
+        <label>Title:</label>
+        <input type="text" name="title">
+        <label>Location</label>
+        <input type="text" name="location">
+        <label>Description</label>
+        <input type="text" name="description">
+        <label>Image</label>
+        <input type="file" name="image">
+        <input type="submit">
+    </form>
+<%- include('../partials/footer') %> 
