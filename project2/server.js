@@ -5,6 +5,14 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var mongoose = require('mongoose');
 
+require('dotenv').config();
+require('./config/database');
+require('./config/passport');
+
+//For Oauth
+var session = require('express-session');
+var passport = require('passport');
+
 var indexRouter = require('./routes/index');
 var homeRouter = require('./routes/home');
 
@@ -19,6 +27,13 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(session({
+  secret: 'BoulderHere!',
+  resave: false,
+  saveUninitialized: true
+}));
+app.use(passport.initialize());
+app.use(passport.session());
 
 app.use('/', indexRouter);
 app.use('/home', homeRouter);
