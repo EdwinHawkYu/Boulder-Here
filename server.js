@@ -17,7 +17,7 @@ var passport = require('passport');
 var indexRouter = require('./routes/index');
 var homeRouter = require('./routes/home');
 var climbsRouter = require('./routes/climbs');
-var reviewsRouter = require('/route/reviews');
+var reviewsRouter = require('./routes/reivews');
 
 var app = express();
 
