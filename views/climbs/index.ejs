@@ -1,0 +1,27 @@
+<%- include('../partials/header') %> 
+    <h1>All Climbing Postings</h1>
+    
+    <table>
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Location</th>
+                <th>Description</th>
+                <th>Details</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+            <% post.forEach(function(p){ %> 
+                <td><%=p.title%></td>
+                <td><%=p.location%></td>
+                <td><%=p.description%></td>
+                <td><a href="climbs/<%=p.id%>">Check it out!</a></td>
+            </tr>
+            <%})%>
+        </tbody>
+    </table>
+
+    <br>
+    <a id="add-climbing-post" href="/climbs/new">Add New Climbing Spot!</a>
+<%- include('../partials/footer') %> 

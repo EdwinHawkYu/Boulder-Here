@@ -1,0 +1,25 @@
+<%- include('../partials/header') %> 
+    <h1>All Climbing Postings</h1>
+    
+    <table>
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Location</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><%=post.title%></td>
+                <td><%=post.location%></td>
+                <td><%=post.description%></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <br>
+    <form class="delete-form" action="/climbs/<%=post.id%>?_method=Delete" method="post">
+        <button type="submit">Delete Post!</button>
+    </form>
+<%- include('../partials/footer') %> 

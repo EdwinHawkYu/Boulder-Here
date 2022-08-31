@@ -1,0 +1,17 @@
+<%- include('../partials/header') %> 
+    <h1>Add New Climbing Post</h1>
+    <div class="container">
+        <form id="new-form" action="/climbs/new" method="POST" autocomplete="off">
+            <label>Title:</label>
+            <input type="text" name="title">
+            <label>Location</label>
+            <input type="text" name="location">
+            <label>Description</label>
+            <input type="text" name="description">
+            <!-- <label>Image</label>
+            <input id="image-submit" type="file" name="image"> -->
+            <input id="new-submit-button" type="submit" value="Add Posting!">
+        </form>
+    </div>
+
+<%- include('../partials/footer') %> 
