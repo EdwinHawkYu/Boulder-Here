@@ -7,7 +7,9 @@ module.exports={
     new: newClimb,
     create,
     show,
-    delete: deleteClimb
+    delete: deleteClimb,
+    edit,
+    update
 }
 
 function index(req, res, next){
@@ -73,11 +75,30 @@ function show(req, res){
 function deleteClimb(req, res){
 
     Post.findOne({_id: req.params.id}, function(err, post){
-        console.log('Here is the student:')
-        console.log(post)
         post.remove();
         post.save(function(err){
             res.redirect('/climbs')
+        })
+    })
+
+}
+
+function edit(req, res){
+    Post.findOne({_id: req.params.id}, function(err, post){
+        res.render('climbs/edit',{
+            post,
+            user: req.user
+        })
+    })
+}
+
+function update(req,res){
+
+    Post.findByIdAndUpdate({_id:req.params.id},req.body)
+    .then(function(){
+        Post.findOne({_id:req.params.id})
+        .then(function(){
+            res.redirect('/climbs');
         })
     })
 

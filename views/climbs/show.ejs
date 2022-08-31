@@ -17,8 +17,9 @@
             </tr>
         </tbody>
     </table>
-
     <br>
+    <a id="edit-link" href="/climbs/<%=post.id%>/edit">Edit Post!</a>
+
     <form class="delete-form" action="/climbs/<%=post.id%>?_method=Delete" method="post">
         <button type="submit">Delete Post!</button>
     </form>

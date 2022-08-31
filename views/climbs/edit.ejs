@@ -1,0 +1,16 @@
+<%- include('../partials/header') %> 
+    <h1>Edit Posting</h1>
+
+    <div class="container">
+        <form id="edit-form" action="/climbs/<%=post.id%>?_method=PUT" method="post" autocomplete="off">
+            <label>Title</label>
+            <input type="text" name="title" value="<%=post.title%>" >
+            <label>Location</label>
+            <input type="text" name="location" value="<%=post.location%>">
+            <label>Description</label>
+            <input type="text" name="description" value="<%=post.description%>">
+            <input type="submit" id="edit-button"> 
+        </form>
+    </div>
+
+<%- include('../partials/footer') %> 
