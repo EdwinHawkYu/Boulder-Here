@@ -2,7 +2,8 @@ const Climb = require('../models/climb');
 const Post = require('../models/post');
 
 module.exports = {
-    create
+    create,
+    delete: deleteReview
 }
 
 function create(req,res){
@@ -14,5 +15,14 @@ function create(req,res){
         post.save(function(err){
             res.redirect(`/climbs/${post._id}`);
         })
+    })
+}
+
+function deleteReview(req, res){
+    Post.findById(req.params.id, function(err, post){
+        console.log(post.review)
+        // post.review.remove();
+            res.redirect(`/climbs/${post._id}`);
+        // })
     })
 }

@@ -7,10 +7,63 @@ a {
   color: #00B7FF;
 }
 
+h1{
+  text-align: center;
+}
+
 div.container{
   background-color: #f2f2f298;
   padding: 25px;
   border-radius: 7px;
+}
+
+.navbar{
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 50px;
+  width: 100%;
+  background: #009879;
+  border-right: 2px solid #008C71;
+  box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.25);
+}
+
+.navbar-link{
+  display: flex;
+  align-items: center;
+  background: #009879;
+  color: white;
+  text-decoration: none;
+  padding: 15px;
+  font-size: 0.9rem;
+  border-bottom: 1px solid #009879;
+}
+
+.navbar-link .material-icons{
+  margin-right: 5px;
+}
+
+.right-icon{
+  margin-left: auto;
+}
+
+.navbar-link:active{
+  background: #007D65;
+}
+
+.home-container{
+  background-size: auto auto;
+  text-align: center;
+}
+
+.page{
+  text-align: center;
+}
+
+.center{
+  margin-left: auto;
+  margin-right: auto;
 }
 
 #new-submit-button{
@@ -66,7 +119,22 @@ div.container{
 }
 
 #edit-link{
-  margin: 10px 0px;
+  display: flex;
+  max-width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #efefef;
+  color: black;
+  align-items: center;
+  text-decoration: none;
+  padding: 10px;
+  border: 1px solid black;
+  border-radius: 4px;
+}
+
+#delete-review > button{
+  color: red;
+  font-style: italic;
 }
 
 table, th, td{
