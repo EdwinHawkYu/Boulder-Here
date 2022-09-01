@@ -17,10 +17,51 @@
             </tr>
         </tbody>
     </table>
-    <br>
-    <a id="edit-link" href="/climbs/<%=post.id%>/edit">Edit Post!</a>
 
-    <form class="delete-form" action="/climbs/<%=post.id%>?_method=Delete" method="post">
-        <button type="submit">Delete Post!</button>
+    <br>
+    <div>
+        <a id="edit-link" href="/climbs/<%=post.id%>/edit">Edit Post!</a>
+    </div>
+    <div>
+        <form class="delete-form" action="/climbs/<%=post.id%>?_method=Delete" method="post">
+            <button type="submit">Delete Post!</button>
+        </form>
+    </div>
+
+    <h2>Reviews</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Recommendation</th>
+                <th>Grading</th>
+                <th>Comments</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% post.review.forEach(function(r){%>
+            <tr>
+                <td><%=r.recommendation%></td>
+                <td><%=r.grading%></td>
+                <td><%=r.comments%></td>
+            </tr>
+            <% }) %> 
+        </tbody>
+    </table>
+
+    <form id="review-form" action="/climbs/<%=post.id%>/reviews" method="post" autocomplete="off">
+        <label>Recommendation</label>
+        <input type="text" name="recommendation">
+        <label>Grading</label>
+        <select name="grading">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select>
+        <label>Comments</label>
+        <input name="comments" type="text">
+        <input type="submit" value="Add Review">
     </form>
+
 <%- include('../partials/footer') %> 

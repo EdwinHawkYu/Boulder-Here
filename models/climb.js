@@ -8,7 +8,7 @@ var reviewSchema = new mongoose.Schema({
         min: 1,
         max: 5
     },
-    quality: String
+    comments: String
 },{
     timestamps: true
 })
@@ -17,7 +17,7 @@ var reviewSchema = new mongoose.Schema({
 var userSchema = new mongoose.Schema({
     name: String,    email: String,
     // post: [postSchema],
-    review: [reviewSchema],
+    // review: [reviewSchema],
     googleID: String
 },{
     timestamps: true

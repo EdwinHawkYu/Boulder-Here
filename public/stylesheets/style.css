@@ -57,6 +57,10 @@ div.container{
   box-sizing: border-box;
 }
 
+#review-form{
+  padding: 20px 0px;
+}
+
 #image-submit{
   align-content: center;
 }
