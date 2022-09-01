@@ -1,6 +1,7 @@
 const Climb = require('../models/climb');
 const Post = require('../models/post');
-const passport = require('passport');
+const request = require('request');
+const fs = require('fs');
 
 module.exports={
     index,
@@ -51,7 +52,7 @@ function create(req, res){
     let post = new Post(req.body);
     post.save(function(err){
         if(err) return res.redirect('climbs/new');
-        // console.log(post);
+        console.log(post);
         res.redirect('/climbs');
     })
 
@@ -100,6 +101,37 @@ function update(req,res){
         .then(function(){
             res.redirect('/climbs');
         })
+    })
+
+}
+
+function base64_encode(image){
+    var bitmap = fs.readFileSync(image);
+    return bitmap.toString('base64');
+}
+
+function upload(req, res){
+    console.log(req.file);
+    let image = base64_encode(req.file.path);
+
+    const options = {
+        url: "https://api.imgur.com/3/image",
+        method: "POST",
+        headers: {
+            Authorization: `Client-ID ${IMGUR_CLIENT_ID}`
+        },
+        formData: {
+            image: image,
+            type: 'base64'
+        }
+    }
+
+    request(options, function(err, response){
+        if(err) return console.log(err)
+        let body = JSON.parse(response.body)
+        //
+        //
+        res.redirect('/climbs')
     })
 
 }

@@ -1,5 +1,6 @@
 body {
   padding: 50px;
+  background-color: #BDC2BF;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
@@ -9,6 +10,7 @@ a {
 
 h1{
   text-align: center;
+  font-family: 'Bebas Neue', cursive;
 }
 
 div.container{
@@ -16,6 +18,7 @@ div.container{
   padding: 25px;
   border-radius: 7px;
 }
+
 
 .navbar{
   display: flex;
@@ -55,6 +58,17 @@ div.container{
 .home-container{
   background-size: auto auto;
   text-align: center;
+}
+
+.edit-bar{
+  display:flex;
+  max-width: fit-content;
+  padding: 10px;
+  margin:auto;
+}
+
+.edit-bar .edit-form{
+  margin-right: 5px;
 }
 
 .page{
@@ -137,12 +151,45 @@ div.container{
   font-style: italic;
 }
 
+#all-climbs,#add-climbing-post{
+  padding: 15px;
+  font-size: 24px;
+  font-family: 'Bebas Neue', cursive;
+  text-decoration: none;
+  background-color: #04AA6D;
+  color: white;
+}
+
+.select-btn{
+  padding: 2px;
+  font-family: 'Bebas Neue', cursive;
+  text-decoration: none;
+  background-color: #59b7b9;
+  color: white;
+  border-radius: 4px;
+}
+
+#all-climbs:hover,#add-climbing-post:hover{
+  background: #007D65;
+}
+
 table, th, td{
+  background-color: #202932;
+  color: white;
   border: 1px solid black;
   padding: 5px;
 }
 
+td{
+  background-color: #2d3745;
+}
+
 .delete-form button{
   color: red;
+  margin: 20px 0px;
+}
+
+.edit-form button{
+  color: black;
   margin: 20px 0px;
 }

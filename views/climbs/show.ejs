@@ -1,6 +1,6 @@
 <%- include('../partials/header') %> 
 <div class="page">
-    <h1>All Climbing Postings</h1>
+    <h1>Post Details</h1>    
     <table class="center">
         <thead>
             <tr>
@@ -18,17 +18,19 @@
         </tbody>
     </table>
 
-    <br>
-    <div>
-        <a id="edit-link" href="/climbs/<%=post.id%>/edit">
-            <span class="material-icons">edit</span> Edit
-        </a>
-    </div>
-    <div>
-        <form class="delete-form" action="/climbs/<%=post.id%>?_method=Delete" method="post">
+    <div class="edit-bar">
+        <form class="edit-form" action="/climbs/<%=post.id%>/edit" method="get">
             <button type="submit">
-                <span class="material-icons">delete</span>
+                <span class="material-icons">edit</span>
             </button>
+        </form>
+        <!-- <a id="edit-link" href="/climbs/<%=post.id%>/edit">
+            <span class="material-icons">edit</span> Edit
+        </a> -->
+        <form class="delete-form" action="/climbs/<%=post.id%>?_method=Delete" method="post">
+                <button type="submit">
+                    <span class="material-icons">delete</span>
+                </button>
         </form>
     </div>
 
