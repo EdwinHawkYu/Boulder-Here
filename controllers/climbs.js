@@ -19,7 +19,6 @@ function index(req, res, next){
     console.log(req.user)
     Climb.find(modelQuery)
     .sort(sortKey).exec(function(err, users){
-        console.log('Users: ', users)
         if(err) return next(err);
         Post.find({}, function(err, post){
             // console.log('Post: ', post)

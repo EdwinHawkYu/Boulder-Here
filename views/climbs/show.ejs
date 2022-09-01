@@ -24,9 +24,11 @@
                 <span class="material-icons">edit</span>
             </button>
         </form>
-        <!-- <a id="edit-link" href="/climbs/<%=post.id%>/edit">
-            <span class="material-icons">edit</span> Edit
-        </a> -->
+        <form class="upload-form" action="/climbs/<%=post.id%>/upload" method="get">
+            <button type="submit">
+                <span class="material-icons">upload</span>
+            </button>
+        </form>
         <form class="delete-form" action="/climbs/<%=post.id%>?_method=Delete" method="post">
                 <button type="submit">
                     <span class="material-icons">delete</span>

@@ -71,6 +71,10 @@ div.container{
   margin-right: 5px;
 }
 
+.edit-bar .upload-form{
+  margin-right: 5px;
+}
+
 .page{
   text-align: center;
 }
@@ -190,6 +194,11 @@ td{
 }
 
 .edit-form button{
+  color: black;
+  margin: 20px 0px;
+}
+
+.upload-form button{
   color: black;
   margin: 20px 0px;
 }
