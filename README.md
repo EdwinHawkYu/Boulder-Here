@@ -20,21 +20,24 @@ In modern rocking climbing, it is quite common to go to an indoor gym to perform
 
 ## Different Technologies Used
 - <b>HTML/CSS/JavaScript</b>
-    * Created the foundation of the piece and chessboard properties.
 - <b>MongoDB</b>
-    * Created 
+- <b>Express</b>
+- <b>Node.js</b>
+- <b>Oauthrization</b>
     
 
 ## Screenshots of the Game
-![Home Page](img/Chessboard.png)
+![Home Page](img/homepage.png)
+Screenshot of Web Application Home Page
 
 <br>
 
-![Add New Post Page](img/inCheck.png)
+![All Climbing Posts Post](img/all_climbing_post.png)
+Display of All posted Climbing Recommendations
 
 <br>
 
-##Getting Started
+## Getting Started
 
 Lets get started!
 Access the app through the link below:
@@ -43,10 +46,6 @@ Access the app through the link below:
 
 
 ## Future enhancements
-1. S
+1. Implement imgur image upload API.
 
-2. A
-
-3. U
-
-4. A
+2. Allow web application to differentiate between which posts can be editted by the original user.
