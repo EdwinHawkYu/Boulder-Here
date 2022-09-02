@@ -16,7 +16,6 @@ var reviewSchema = new mongoose.Schema({
 
 var userSchema = new mongoose.Schema({
     name: String,    email: String,
-    // post: [postSchema],
     // review: [reviewSchema],
     googleID: String
 },{

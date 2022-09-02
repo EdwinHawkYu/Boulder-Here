@@ -14,8 +14,6 @@ Rocking climbing is a form of activity involved scaling and/or traversing areas 
 - Bouldering
 
 In modern rocking climbing, it is quite common to go to an indoor gym to perform this physical activity however many climbers enjoy going outdoors to experience the real deal. This app will allow users to post their recommendations and other users can provide feedback.
-
-
 <br>
 
 ## Different Technologies Used
@@ -25,7 +23,6 @@ In modern rocking climbing, it is quite common to go to an indoor gym to perform
 - <b>Node.js</b>
 - <b>Oauthrization</b>
     
-
 ## Screenshots of the Game
 ![Home Page](img/homepage.png)
 Screenshot of Web Application Home Page

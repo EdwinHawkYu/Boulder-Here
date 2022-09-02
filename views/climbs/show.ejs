@@ -18,23 +18,25 @@
         </tbody>
     </table>
 
-    <div class="edit-bar">
-        <form class="edit-form" action="/climbs/<%=post.id%>/edit" method="get">
-            <button type="submit">
-                <span class="material-icons">edit</span>
-            </button>
-        </form>
-        <form class="upload-form" action="/climbs/<%=post.id%>/upload" method="get">
-            <button type="submit">
-                <span class="material-icons">upload</span>
-            </button>
-        </form>
-        <form class="delete-form" action="/climbs/<%=post.id%>?_method=Delete" method="post">
+    <% if(user){ %>
+        <div class="edit-bar">
+            <form class="edit-form" action="/climbs/<%=post.id%>/edit" method="get">
                 <button type="submit">
-                    <span class="material-icons">delete</span>
+                    <span class="material-icons">edit</span>
                 </button>
-        </form>
-    </div>
+            </form>
+            <form class="upload-form" action="/climbs/<%=post.id%>/upload" method="get">
+                <button type="submit">
+                    <span class="material-icons">upload</span>
+                </button>
+            </form>
+            <form class="delete-form" action="/climbs/<%=post.id%>?_method=Delete" method="post">
+                    <button type="submit">
+                        <span class="material-icons">delete</span>
+                    </button>
+            </form>
+        </div>
+    <% } %>
 
     <h2>Reviews</h2>
     <table class="center">
@@ -51,31 +53,35 @@
                 <td><%=r.recommendation%></td>
                 <td><%=r.grading%></td>
                 <td><%=r.comments%></td>
-                <td><a href="/climbs/<%=post.id%>/reviews">Edit</a></td>
+                <!-- <td><a href="/climbs/<%=post.id%>/reviews">Edit</a></td> -->
             </tr>
             <% }) %> 
         </tbody>
     </table>
 
-    <form id="review-form" action="/climbs/<%=post.id%>/reviews" method="post" autocomplete="off">
-        <label>Recommendation</label>
-        <select name="recommendation">
-            <option value="Highly Recommended">Highly Recommended</option>
-            <option value="Recommended">Recommended</option>
-            <option value="Not Recommended">Not Recommended</option>
-        </select>
-        <label>Grading</label>
-        <select name="grading">
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-        </select>
-        <label>Comments</label>
-        <input name="comments" type="text">
-        <input type="submit" value="Add Review">
-    </form>
+    <% if(user){ %>
+        <form id="review-form" action="/climbs/<%=post.id%>/reviews" method="post" autocomplete="off">
+            <label>Recommendation</label>
+            <select name="recommendation">
+                <option value="Highly Recommended">Highly Recommended</option>
+                <option value="Recommended">Recommended</option>
+                <option value="Not Recommended">Not Recommended</option>
+            </select>
+            <label>Grading</label>
+            <select name="grading">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+            <label>Comments</label>
+            <input name="comments" type="text">
+            <input type="submit" value="Add Review">
+        </form>
+    <% } %>
+
+    
 </div>    
 
 <%- include('../partials/footer') %> 

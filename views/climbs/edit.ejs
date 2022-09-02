@@ -1,6 +1,13 @@
 <%- include('../partials/header') %> 
     
 <h1>Edit Posting</h1>
+<% console.log('Leggo') %> 
+<% console.log(post) %>     
+<% console.log(post._id) %> 
+<% console.log('User') %> 
+<% console.log(user) %> 
+<% console.log(user._id) %> 
+
     <div class="container">
         <form id="edit-form" action="/climbs/<%=post.id%>?_method=PUT" method="post" autocomplete="off">
             <label>Title</label>

@@ -24,6 +24,8 @@
     </table>
 
     <br>
-    <a id="add-climbing-post" href="/climbs/new">Add New Climbing Spot!</a>
+    <% if(user){ %>
+        <a id="add-climbing-post" href="/climbs/new">Add New Climbing Spot!</a>
+    <% } %> 
 </div>
-<%- include('../partials/footer') %> 
+<%- include('../partials/footer') %> s
